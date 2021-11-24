@@ -1,19 +1,26 @@
 @media all and (min-width: 480px) {
-    .title{
-      font-weight:bolder;
-      color: #995050;
-      font-size: 30px;
-      position:relative;
-    }
+  .title{
+    font-weight:bolder;
+    color: #995050;
+    font-size: 3x 0px;
+    position:relative;
+    align-items:center;
+    justify-content: center;
+  }
     .Login {
       padding: 60px 0;
     }
-    .labelLogin{
+    .labelOne{
+      color: #995050;
+      font-size: 15px;
+      position:relative;
+      padding:20px;
+    }
+    .labelType{
       font-weight:bolder;
       color: #995050;
       font-size: 30px;
       position:relative;
-      left:50px;
     }
     .centered {
       display: flex;

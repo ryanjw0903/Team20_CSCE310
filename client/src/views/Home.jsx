@@ -21,12 +21,11 @@ useEffect(() => {
 
   return (
     <div className="main-page">
+      <h3 class = "title">GOMARVELFACTS</h3>
 
     <div class="container">
-      
       <div class="row my-5">
         <div class="col-lg-18">
-      
           <div class="centered">
               <div class="col-lg-6">
                 <label class = "labelInput" for="movie">Marvel Movie:</label>

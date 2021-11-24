@@ -17,8 +17,10 @@ export default function Login() {
   }
 
   return (
-    <div class>
-      <div class>
+    <div class = "container">
+      <p class = "title">GOMARVELFACTS</p>
+      <div class = "row">
+        <div class = "col-lg-6">
         <h2 class="labelLogin">Login</h2>
         <Form onSubmit={handleSubmit}>
           <Form.Group size="lg" controlId="email">
@@ -44,12 +46,15 @@ export default function Login() {
           </Button>
           <Signup/>
         </Form>
-        <h2 class="labelLogin">User History</h2>
+        </div>
+       <div class = "col-lg-6">
+       <h2 class="labelLogin">User History</h2>
           <ul class="Trips">
             <li>Iron Man 3</li>
             <li>Iron Man 2</li>
             <li>The Avengers</li>
           </ul>
+       </div>
       </div>
     </div>
   );
