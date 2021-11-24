@@ -1,0 +1,29 @@
+@media all and (min-width: 480px) {
+    .Login {
+      padding: 60px 0;
+    }
+    .labelLogin{
+      font-weight:bolder;
+      color: #995050;
+      font-size: 30px;
+      position:relative;
+      left:50px;
+    }
+    .centered {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+    }
+    .Login header {
+        margin: 0 auto;
+        max-width: 320px;
+        position: relative;
+        left: 200px;
+    }
+    .Login form {
+      margin: 0 auto;
+      max-width: 320px;
+      position: absolute;
+      left: 200px
+    }
+  }
