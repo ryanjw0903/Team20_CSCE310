@@ -18,7 +18,9 @@ export default function Signup() {
       }
     
     function handleSubmit(event) {
+        console.log("Email: " + email + "Password:" + password + "Confirm:" + confirm);
         event.preventDefault();
+        handleClose();
     }
 
     return (
@@ -65,7 +67,7 @@ export default function Signup() {
             <Button variant="secondary" onClick={handleClose}>
               Close
             </Button>
-            <Button variant="primary" disabled={!validateForm()} onClick={handleClose}>
+            <Button variant="primary" disabled={!validateForm()} onClick={handleSubmit}>
               Create Account
             </Button>
           </Modal.Footer>

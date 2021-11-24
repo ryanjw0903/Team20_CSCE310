@@ -3,26 +3,36 @@ import './Home.css'
 import { useState, useEffect } from 'react';
 import { useNavigate } from "react-router-dom";
 
+class Home extends React.Component{
+  constructor(){
+    super();
+    this.state = {
+      movieName:""
+    };
+    this.getMovie = this.getMovie.bind(this);
+  }
 
-function Home() {
-  const [data, setData] = useState(null);
-
-useEffect(() => {
-    fetch("/movies")
-      .then(res => res.json())
-      .then(res => {
-          console.log(res);
-          setData(res.message);
-      })
-      .catch(err => {
-        console.error("Error", err);
-      })
-  }, []);
-
-  return (
+// useEffect(() => {
+//     fetch("/movies")
+//       .then(res => res.json())
+//       .then(res => {
+//           console.log(res);
+//           setData(res.message);
+//       })
+//       .catch(err => {
+//         console.error("Error", err);
+//       })
+//   }, []);
+getMovie(){
+  var name = document.getElementById('movie').value;
+  this.setState({movieName: name}
+    //,() => (console.log(this.state.movieName))
+    )
+};  
+render(){
+return (
     <div className="main-page">
       <h3 class = "title">GOMARVELFACTS</h3>
-
     <div class="container">
       <div class="row my-5">
         <div class="col-lg-18">
@@ -30,7 +40,7 @@ useEffect(() => {
               <div class="col-lg-6">
                 <label class = "labelInput" for="movie">Marvel Movie:</label>
                 <input type="text" id = "movie" class="form-control" aria-label="Large" placeholder = "ex: Iron Man" />    
-                <button type="button"   class="btn btn-primary">Enter</button>
+                <button type="button" class="btn btn-primary" onClick={this.getMovie}>Enter</button>
               </div>
           </div>
 
@@ -47,6 +57,8 @@ useEffect(() => {
     </div>
     </div>
   );
+  }
 }
+
 
 export default Home;

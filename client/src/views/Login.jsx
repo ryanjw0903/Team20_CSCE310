@@ -4,15 +4,18 @@ import Button from 'react-bootstrap/Button';
 import './Login.css';
 import Signup from "./Signup";
 
+
 export default function Login() {
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
 
   function validateForm() {
+
     return email.length > 0 && password.length > 0;
   }
 
   function handleSubmit(event) {
+    console.log("email: " + email + "password+: " + password);
     event.preventDefault();
   }
 
