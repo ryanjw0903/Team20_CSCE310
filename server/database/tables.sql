@@ -11,6 +11,14 @@ CREATE TABLE Movies (
 	PRIMARY KEY (movieID)
 );
 
+CREATE TABLE Characters (
+		charID int NOT NULL, 
+        name varchar(255),
+        description varchar(255), 
+        actorID int, 
+        PRIMARY KEY (charID)
+);
+
 CREATE TABLE Actors (
 		actorID int NOT NULL, 
         name varchar(255),
@@ -19,14 +27,6 @@ CREATE TABLE Actors (
         charID int, 
         PRIMARY KEY (actorID),
         FOREIGN KEY (charID) REFERENCES Characters(charID)
-);
-
-CREATE TABLE Characters (
-		charID int NOT NULL, 
-        name varchar(255),
-        description varchar(255), 
-        actorID int, 
-        PRIMARY KEY (charID)
 );
 
 ALTER TABLE Characters 
