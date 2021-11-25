@@ -2,7 +2,7 @@ import React from 'react';
 import Home from './views/Home'
 import Login from './views/Login'
 import Admin from './views/Admin'
-import { Link, Route, Routes, Switch } from "react-router-dom";
+import { Link, Route, Routes} from "react-router-dom";
 
 function App() {
   return (

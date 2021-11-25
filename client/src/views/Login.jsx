@@ -10,7 +10,6 @@ export default function Login() {
   const [password, setPassword] = useState("");
 
   function validateForm() {
-
     return email.length > 0 && password.length > 0;
   }
 
@@ -20,11 +19,11 @@ export default function Login() {
   }
 
   return (
-    <div class = "container">
-      <p class = "title">GOMARVELFACTS</p>
-      <div class = "row">
-        <div class = "col-lg-6">
-        <h2 class="labelLogin">Login</h2>
+    <div className = "container">
+      <p className = "title">GOMARVELFACTS</p>
+      <div className = "row">
+        <div className = "col-lg-6">
+        <h2 className="labelLogin">Login</h2>
         <Form onSubmit={handleSubmit}>
           <Form.Group size="lg" controlId="email">
             <Form.Label>Email</Form.Label>
@@ -44,15 +43,15 @@ export default function Login() {
               onChange={(e) => setPassword(e.target.value)}
             />
           </Form.Group>
-          <Button variant = "primary" class = "btn" type="submit" disabled={!validateForm()}>
+          <Button variant = "primary" className = "btn" type="submit" disabled={!validateForm()}>
             Login
           </Button>
           <Signup/>
         </Form>
         </div>
-       <div class = "col-lg-6">
-       <h2 class="labelLogin">User History</h2>
-          <ul class="Trips">
+       <div className = "col-lg-6">
+       <h2 className="labelLogin">User History</h2>
+          <ul className="Trips">
             <li>Iron Man 3</li>
             <li>Iron Man 2</li>
             <li>The Avengers</li>

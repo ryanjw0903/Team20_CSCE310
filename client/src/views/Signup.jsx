@@ -24,14 +24,14 @@ export default function Signup() {
     }
 
     return (
-      <div class>
-        <Button variant="primary" class = "btn" onClick={handleShow}>
+      <div className>
+        <Button variant="primary" className = "btn" onClick={handleShow}>
           Sign Up
         </Button> 
         <Modal show={show} onHide={handleClose}>
           <Modal.Body>
-            <label class = "labelLogin">Sign up </label>
-          <div class>
+            <label className = "labelLogin">Sign up </label>
+          <div className>
             <Form onSubmit={handleSubmit}>
                 <Form.Group size="lg" controlId="email">
                 <Form.Label>Email</Form.Label>
