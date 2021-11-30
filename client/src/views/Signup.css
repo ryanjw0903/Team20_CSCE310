@@ -1,0 +1,14 @@
+.centered {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+  .labelLogin{
+    font-weight:bolder;
+    color: #995050;
+    font-size: 30px;
+    position:relative;
+    padding-bottom:20px;
+    justify-content: center;
+    align-items: center;
+  }

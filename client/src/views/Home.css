@@ -1,0 +1,79 @@
+body {
+    background-color: #C4C4C4;
+    margin: 0;
+    margin-right: 50 px;
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
+      'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
+      sans-serif;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+  }
+  .title{
+    font-weight:bolder;
+    color: #995050;
+    font-size: 30px;
+    position:relative;
+    align-items:center;
+    justify-content: center;
+  }
+  .labelResults{
+    font-weight:bolder;
+    color: #995050;
+    font-size: 24px;
+    text-align: center;
+  }
+  .labelInput{
+    font-weight:bolder;
+    color: #995050;
+    padding-right:10px;
+    font-size:25px;
+  }
+  .centered {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 20px;
+  }
+  .labelRadio{
+    margin-left: 5px;
+    color: 'black';
+    font-size: 15px;
+  }
+  .btn{
+    background-color: #995050 !important; 
+    color: rgb(235, 227, 227);
+    font-weight:bolder;
+    position: relative; 
+    height: 30px;
+  }
+  
+  .btn:hover {
+    color: #995050 !important;
+    background-color:rgb(235, 227, 227)!important;
+    border-color: rgb(255,255,255) !important;
+  }
+  
+  .container1 {
+    text-align: center;
+    color: #995050;
+    font-size: xxx-large;
+    font-weight: bold;
+  }
+  
+  form {
+    overflow: hidden;
+  }
+  
+  input {
+    clear: both;
+  }
+  button{
+    color:#995050;
+    margin-top:20px;
+
+  }
+  
+  
+  
+  
+  
