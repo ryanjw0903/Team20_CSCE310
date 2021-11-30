@@ -1,10 +1,12 @@
 var express = require('express');
-var cCharacters = require('../model/characters');
+const db = require('../database/db');
 var router = express.Router();
 
 router.get('/characters', (req, res) => {
-    // will call model functions 
-    return res.json({ message: "Route to Get all characters" });
+    db.query('SELECT * FROM characters', function(err, result) {
+        if (err) throw err
+        return res.end(JSON.stringify(result));
+      })
 });
 
 // to insert will need to make post instead
