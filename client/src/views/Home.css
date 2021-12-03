@@ -45,6 +45,7 @@ body {
     font-weight:bolder;
     position: relative; 
     height: 30px;
+    margin-left: 5px;
   }
   
   .btn:hover {
@@ -62,6 +63,10 @@ body {
   
   form {
     overflow: hidden;
+  }
+
+  form div{
+    display: inline;
   }
   
   input {

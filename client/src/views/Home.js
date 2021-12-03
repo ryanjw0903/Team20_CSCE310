@@ -1,23 +1,48 @@
 import React from "react";
 import './Home.css'
-import { useState} from 'react';
+import {useState, useEffect} from 'react';
 import { Form, Button } from 'react-bootstrap';
 
 
 export default function Home(){
   const[movieName, setMovieName] = useState("");
-/*
+  const[allMovies, setAllMovies] = useState([]);
+  const[allActors, setAllActors] = useState([]);
+  const[allCharacters, setAllCharacters] = useState([]);
+
+
+// Gets SELECT * on first render of home page
 useEffect(() => {
      fetch("/movies")
+      .then(res => {
+          console.log(res);
+          setAllMovies(res);
+      })
+      .catch(err => {
+        console.error("Error", err);
+    })
+
+    fetch("/actors")
        .then(res => res.json())
       .then(res => {
           console.log(res);
+          setAllActors(res);
+      })
+      .catch(err => {
+        console.error("Error", err);
+    })
+
+
+    fetch("/characters")
+       .then(res => res.json())
+      .then(res => {
+          console.log(res);
+          setAllCharacters(res);
       })
       .catch(err => {
         console.error("Error", err);
     })
   }, []);
-  */
 
 function handleSubmit(event){
   console.log(movieName);
