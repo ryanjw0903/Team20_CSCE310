@@ -1,10 +1,13 @@
 var express = require('express');
-var Movies = require('../model/movies');
+const db = require('../database/db');
 var router = express.Router();
 
 router.get('/movies', (req, res) => {
     // will call model functions 
-    return res.json({ message: "Route to Get all Movies" });
+    db.query('SELECT * FROM movies', function(err, result) {
+        if (err) throw err
+        return res.end(JSON.stringify(result));
+      })
 });
 
 // to insert will need to make post instead

@@ -1,10 +1,12 @@
 var express = require('express');
-var Actors = require('../model/actors');
+const db = require('../database/db');
 var router = express.Router();
 
 router.get('/actors', (req, res) => {
-    // will call model functions 
-    return res.json({ message: "Route to Get all actors" });
+    db.query('SELECT * FROM actors', function(err, result) {
+        if (err) throw err
+        return res.end(JSON.stringify(result));
+      })
 });
 
 // to insert will need to make post instead

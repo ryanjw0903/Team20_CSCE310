@@ -1,23 +1,49 @@
 import React from "react";
 import './Home.css'
-import { useState } from 'react';
-import Form from "react-bootstrap/Form"
-import Button from 'react-bootstrap/Button'
+import {useState, useEffect} from 'react';
+import { Form, Button } from 'react-bootstrap';
+
+
 export default function Home(){
   const[movieName, setMovieName] = useState("");
+  const[allMovies, setAllMovies] = useState([]);
+  const[allActors, setAllActors] = useState([]);
+  const[allCharacters, setAllCharacters] = useState([]);
 
 
-// useEffect(() => {
-//     fetch("/movies")
-//       .then(res => res.json())
-//       .then(res => {
-//           console.log(res);
-//           setData(res.message);
-//       })
-//       .catch(err => {
-//         console.error("Error", err);
-//       })
-//   }, []);
+// Gets SELECT * on first render of home page
+useEffect(() => {
+     fetch("/movies")
+      .then(res => {
+          console.log(res);
+          setAllMovies(res);
+      })
+      .catch(err => {
+        console.error("Error", err);
+    })
+
+    fetch("/actors")
+       .then(res => res.json())
+      .then(res => {
+          console.log(res);
+          setAllActors(res);
+      })
+      .catch(err => {
+        console.error("Error", err);
+    })
+
+
+    fetch("/characters")
+       .then(res => res.json())
+      .then(res => {
+          console.log(res);
+          setAllCharacters(res);
+      })
+      .catch(err => {
+        console.error("Error", err);
+    })
+  }, []);
+
 function handleSubmit(event){
   console.log(movieName);
   event.preventDefault();
@@ -27,7 +53,6 @@ function handleSubmit(event){
 
 return (
     <div className="main-page">
-      <h3 className = "title">GOMARVELFACTS</h3>
     <div className="container">
       <div className="row my-5">
         <div className="col-lg-18">

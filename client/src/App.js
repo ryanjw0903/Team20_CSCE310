@@ -2,32 +2,36 @@ import React from 'react';
 import Home from './views/Home'
 import Login from './views/Login'
 import Admin from './views/Admin'
-import { Link, Route, Routes} from "react-router-dom";
+import './App.css'
+import {Link, Route, Switch} from "react-router-dom";
 
 function App() {
   return (
-    <div>
-    <nav className="navbar navbar-light">
-      <ul className="nav navbar-nav">
-        <li>
-          <Link to="/">Home</Link>
-        </li>
-        <li>
-          <Link to="/Login">Login</Link>
-        </li>
-        <li>
-          <Link to="/Admin">Admin</Link>
-        </li>
-      </ul>
-    </nav>
+      <React.Fragment>
+        <div class="nav-wrapper">
+          <h1>GoMarvelFacts</h1>
+          <nav className="nav-container">
+            <ul className="nav-style">
+              <li>
+                <Link to="/">Home</Link>
+              </li>
+              <li>
+                <Link to="/login">Login</Link>
+              </li>
+              <li>
+                <Link to="/admin">Admin</Link>
+              </li>
+            </ul>
+          </nav>
+        </div>
 
-    <Routes>
-      <Route path="/" element ={<Home />}/>
-      <Route path="/Login" element ={<Login />}/>
-      <Route path="/Admin" element ={<Admin />}/>
+      <Switch>
+        <Route exact path="/" component={Home} />
+        <Route path="/login" component={Login} />
+        <Route path="/admin" component={Admin} />
+      </Switch>
 
-    </Routes>
-  </div>
+   </React.Fragment>
   );
 }
 

@@ -1,0 +1,25 @@
+.nav-wrapper{
+    display: inline-block;
+    text-align: center;
+    position:relative;
+    width:100%;
+    background:  #995050;
+    color: white;
+    padding: 1%
+}
+.nav-container{
+   width: 15%;
+   display: inline-block
+}
+.nav-style{
+    list-style-type: none;
+    justify-content: space-between;
+    display: flex;
+    margin-block: unset;
+    margin-inline: unset;
+    padding-inline: unset
+}
+
+.nav-style a{
+   color: white;
+}

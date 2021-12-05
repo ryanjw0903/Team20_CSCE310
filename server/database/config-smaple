@@ -1,0 +1,13 @@
+
+// This a sample file do not use
+// Create a new file under datbase folder called config.js
+// Copy the code below and update with your USER and PASSWORD
+
+const express = require('express');
+
+module.exports = {
+    HOST: 'localhost',
+    USER: 'root',
+    PASSWORD: 'password',
+    DB: 'gomarvelfacts'
+}

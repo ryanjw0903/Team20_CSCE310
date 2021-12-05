@@ -5,7 +5,7 @@ import './Login.css';
 import Signup from "./Signup";
 
 
-export default function Login() {
+ function Login() {
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
 
@@ -20,7 +20,6 @@ export default function Login() {
 
   return (
     <div className = "container">
-      <p className = "title">GOMARVELFACTS</p>
       <div className = "row">
         <div className = "col-lg-6">
         <h2 className="labelLogin">Login</h2>
@@ -61,3 +60,6 @@ export default function Login() {
     </div>
   );
 }
+
+export default Login;
+

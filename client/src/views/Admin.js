@@ -73,7 +73,6 @@ export default function Admin() {
   }
   return (
 <div className="container">
-<h3 className = "title">GOMARVELFACTS</h3>
   <div className="row">
           <div className="col-sm-4">
             <label className = "labelType">Movie </label>
