@@ -46,6 +46,7 @@ useEffect(() => {
   }, []);
 
 function handleSubmit(event){
+  console.log(event);
   console.log(movieName);
   event.preventDefault();
 
@@ -73,9 +74,6 @@ return (
                     Enter
                   </Button>
                   </Form>
-                {/* <label className = "labelInput" for="movie">Marvel Movie:</label>
-                <input type="text" id = "movie" className="form-control" aria-label="Large" placeholder = "ex: Iron Man" />    
-                <button type="button" className="btn btn-primary" onClick={this.getMovie}>Enter</button> */}
               </div>
           </div>
 
