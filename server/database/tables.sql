@@ -7,7 +7,7 @@ CREATE TABLE Movies (
 	title varchar(255),
 	length int,
 	director varchar(255),
-	description varchar(255),
+	description varchar(1000),
 	PRIMARY KEY (movieID)
 );
 
