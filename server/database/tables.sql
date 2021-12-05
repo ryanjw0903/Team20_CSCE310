@@ -14,7 +14,7 @@ CREATE TABLE Movies (
 CREATE TABLE Characters (
 		charID int NOT NULL, 
         name varchar(255),
-        description varchar(255), 
+        description varchar(1000), 
         actorID int, 
         PRIMARY KEY (charID)
 );
