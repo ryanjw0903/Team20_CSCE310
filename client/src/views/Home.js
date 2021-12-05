@@ -14,6 +14,7 @@ export default function Home(){
 // Gets SELECT * on first render of home page
 useEffect(() => {
      fetch("/movies")
+     .then(res => res.json())
       .then(res => {
           console.log(res);
           setAllMovies(res);
