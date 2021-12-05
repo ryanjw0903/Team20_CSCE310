@@ -1,7 +1,5 @@
 import React from 'react';
 import Home from './views/Home'
-import Login from './views/Login'
-import Admin from './views/Admin'
 import './App.css'
 import {Link, Route, Switch} from "react-router-dom";
 
