@@ -8,6 +8,7 @@ var connection = mysql.createConnection({
     user: dbConfig.USER,
     password: dbConfig.PASSWORD,
     database: dbConfig.DB,
+    multipleStatements: true
 })
 
 connection.connect(function(err) {
