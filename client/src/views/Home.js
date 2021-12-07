@@ -9,6 +9,7 @@ export default function Home(){
   const[allMovies, setAllMovies] = useState([]);
   const[allActors, setAllActors] = useState([]);
   const[allCharacters, setAllCharacters] = useState([]);
+  const[facts, setFacts] = useState([]);
 
 
 // Gets SELECT * on first render of home page
@@ -55,7 +56,8 @@ function handleSubmit(event){
   fetch("/movie", requestOptions)
   .then(res => res.json())
   .then(res => {
-     console.log(res);
+     console.log(res)
+     setFacts(res)
   })
   .catch(err => {
    console.error("Error", err);
