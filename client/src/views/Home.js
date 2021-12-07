@@ -13,7 +13,7 @@ export default function Home(){
 
 // Gets SELECT * on first render of home page
 useEffect(() => {
-     fetch("/movies")
+     fetch("/allMovies")
      .then(res => res.json())
       .then(res => {
           console.log(res);
@@ -23,7 +23,7 @@ useEffect(() => {
         console.error("Error", err);
     })
 
-    fetch("/actors")
+    fetch("/allActors")
        .then(res => res.json())
       .then(res => {
           console.log(res);
@@ -34,7 +34,7 @@ useEffect(() => {
     })
 
 
-    fetch("/characters")
+    fetch("/allCharacters")
        .then(res => res.json())
       .then(res => {
           console.log(res);
@@ -47,9 +47,20 @@ useEffect(() => {
 
 function handleSubmit(event){
   console.log(movieName);
+  const requestOptions = {
+    method: 'POST',
+    headers: { 'Content-Type': 'application/json' },
+    body: JSON.stringify({ title: movieName })
+  };
+  fetch("/movie", requestOptions)
+  .then(res => res.json())
+  .then(res => {
+     console.log(res);
+  })
+  .catch(err => {
+   console.error("Error", err);
+  })
   event.preventDefault();
-
-  //this.setState({movieName: name})
 }
 
 return (
