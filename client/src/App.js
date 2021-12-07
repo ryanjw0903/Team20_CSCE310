@@ -1,7 +1,7 @@
 import React from 'react';
 import Home from './views/Home'
 import './App.css'
-import {Link, Route, Switch} from "react-router-dom";
+import {Link, Route, Routes} from "react-router-dom";
 
 function App() {
   return (
@@ -14,18 +14,15 @@ function App() {
                 <Link to="/">Home</Link>
               </li>
               <li>
-                <Link to="/login">Login</Link>
-              </li>
-              <li>
                 <Link to="/admin">Admin</Link>
               </li>
             </ul>
           </nav>
         </div>
 
-      <Switch>
-        <Route exact path="/" component={Home} />
-      </Switch>
+      <Routes>
+        <Route exact path="/" element={<Home/>} />
+      </Routes>
 
    </React.Fragment>
   );

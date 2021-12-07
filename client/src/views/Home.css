@@ -26,7 +26,13 @@ body {
     font-weight:bolder;
     color: #995050;
     padding-right:10px;
-    font-size:25px;
+    font-size:50px;
+  }
+  .movieInput{
+    font-weight:bold;
+    color: #995050;
+    padding-right:10px;
+    font-size:40px;
   }
   .centered {
     display: flex;
