@@ -1,7 +1,7 @@
 import React from "react";
 import './Home.css'
+import Facts from "./factsheet"
 import 'bootstrap/dist/css/bootstrap.css';
-
 import {useState, useEffect} from 'react';
 import { Form, Button, Dropdown, DropdownButton } from 'react-bootstrap';
 
@@ -11,7 +11,7 @@ export default function Home(){
   const[allMovies, setAllMovies] = useState([]);
   const[allActors, setAllActors] = useState([]);
   const[allCharacters, setAllCharacters] = useState([]);
-  const[facts, setFacts] = useState([]);
+  const[facts, setFacts] = useState(null);
 
 
   const handleSelect=(e)=>{
@@ -24,7 +24,6 @@ useEffect(() => {
      fetch("/allMovies")
      .then(res => res.json())
       .then(res => {
-          console.log(res);
           setAllMovies(res);
       })
       .catch(err => {
@@ -34,18 +33,15 @@ useEffect(() => {
     fetch("/allActors")
        .then(res => res.json())
       .then(res => {
-          console.log(res);
           setAllActors(res);
       })
       .catch(err => {
         console.error("Error", err);
     })
 
-
     fetch("/allCharacters")
        .then(res => res.json())
       .then(res => {
-          console.log(res);
           setAllCharacters(res);
       })
       .catch(err => {
@@ -62,8 +58,7 @@ function handleSubmit(event){
   fetch("/movie", requestOptions)
   .then(res => res.json())
   .then(res => {
-     console.log(res)
-     setFacts(res)
+     setFacts(res);
   })
   .catch(err => {
    console.error("Error", err);
@@ -72,6 +67,7 @@ function handleSubmit(event){
 }
 
 return (
+    <React.Fragment>
     <div className="main-page">
     <div className="container">
       <div className="row my-5">
@@ -111,15 +107,19 @@ return (
               <div className = "col-lg-12">
                   <div className = "d-flex justify-content-center" style = {{textAlign: 'center', fontSize: '40px'}}>
                     <label className = "labelInput">Fun Facts:</label>
-                  </div>
-                  <div className="d-flex justify-content-center" style = {{textAlign: 'center', backgroundColor: '#995050', color: 'white'}}>
+                    {facts ? (
+                    <div className="col-lg-6" style = {{textAlign: 'center', backgroundColor: '#995050', color: 'white'}}>
+                      <Facts facts={facts}/>
+                    </div>
+                  ):(
+                    <div className="col-lg-6" style = {{textAlign: 'center', backgroundColor: '#995050', color: 'white'}}>
                       Once you submit the movie title, we'll fill this up with fun facts.<br/><br/><br/>
-                  </div>
+                    </div>
+                  )}
+                 </div>
               </div>
          </div>
       </div>
-    </div>
-    </div>
+    </React.Fragment>
   );
   }
-
