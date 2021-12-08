@@ -15,8 +15,9 @@ export default function Home(){
 
 
   const handleSelect=(e)=>{
-    console.log(e);
-    setMovieName(e)
+    console.log(e.target.value);
+    setMovieName(e.target.value);
+    setFacts(null)
   }
 
 // Gets SELECT * on first render of home page
@@ -68,58 +69,61 @@ function handleSubmit(event){
 
 return (
     <React.Fragment>
-    <div className="main-page">
-    <div className="container">
-      <div className="row my-5">
-        <div className="col-lg-12">
-              <div className="row-lg-6 centered">
-              <label className = "movieInput">Input movie here:</label>
-                <DropdownButton title="Dropdown right"
-                  id="dropdown-menu-align-right"
-                  onSelect={handleSelect} title= {movieName}>
-                  <Dropdown.Item eventKey="Iron Man" as = "button" >Iron Man</Dropdown.Item>
-                  <Dropdown.Item eventKey="Iron Man 2" as = "button" >Iron Man 2</Dropdown.Item>
-                  <Dropdown.Item eventKey="Thor" as = "button" >Thor</Dropdown.Item>
-                  <Dropdown.Item eventKey="Captain America: The first Avenger" as = "button" >Captain America: The First Avenger</Dropdown.Item>
-                  <Dropdown.Item eventKey="Marvel\'s The Avengers" as = "button" >"Marvel's The Avengers</Dropdown.Item>
-                  <Dropdown.Item eventKey="Iron man 3" as = "button" >Iron Man 3</Dropdown.Item>
-                  <Dropdown.Item eventKey="Thor: The Dark World" as = "button" >Thor: The Dark World</Dropdown.Item>
-                  <Dropdown.Item eventKey="Captain America: The Winter Soldier" as = "button" >Captain America: The Winter Soldier</Dropdown.Item>
-                  <Dropdown.Item eventKey="Guardians of the Galaxy" as = "button" >Guardians of the Galaxy</Dropdown.Item>
-                  <Dropdown.Item eventKey="Avengers: Age of Ultron" as = "button" >Avengers: Age of Ultron</Dropdown.Item>
-                  <Dropdown.Item eventKey="Ant-Man" as = "button" >Ant-Man</Dropdown.Item>
-                  <Dropdown.Item eventKey="Captain America" as = "button" >Captain America</Dropdown.Item>
-                  <Dropdown.Item eventKey="Doctor Strange" as = "button" >Doctor Strange</Dropdown.Item>
-                  <Dropdown.Item eventKey="Guardians of the Galaxy Vol. 2" as = "button" >Guardians of the Galaxy Vol. 2</Dropdown.Item>
-                  <Dropdown.Item eventKey="spider-Man: Homecoming" as = "button" >Spider-Man: Homecoming</Dropdown.Item>
-                  <Dropdown.Item eventKey="Thor: Ragnarok" as = "button" >Thor: Ragnarok</Dropdown.Item>
-                  <Dropdown.Item eventKey="Black Panther" as = "button" >Black Panther</Dropdown.Item>
-                  <Dropdown.Item eventKey="Avengers: Infinity War" as = "button" >Avengers: Infinity War</Dropdown.Item>
-                  <Dropdown.Item eventKey="Ant-Man and the Wasp" as = "button" >Ant-Man and the Wasp</Dropdown.Item>
-                  <Dropdown.Item eventKey="Captain Marvel" as = "button" >Captain Marvel</Dropdown.Item>
-                  <Dropdown.Item eventKey="Avengers: End Game" as = "button" >Avengers: End Game</Dropdown.Item>
-                  <Dropdown.Item eventKey="Spider-Man: Far From Home" as = "button" >Spider-Man: Far From Home</Dropdown.Item>
-                </DropdownButton>
+    <div>
+      <div>
+        <div>
+          <div>
+            <div className="centered">
+              <h3 className = "movieInput">Input movie here:</h3>
+              <Form.Select aria-label="Default select example"
+                onChange={handleSelect} 
+                >
+                  <option>Select a Movie</option>
+                  <option value="Iron Man">Iron Man</option>
+                  <option value="Iron Man 2">Iron Man 2</option>
+                  <option value="Thor">Thor</option>
+                  <option value="Captain America: The first Avenger">Captain America: The First Avenger</option>
+                  <option value="Marvel\'s The Avengers">"Marvel's The Avengers</option>
+                  <option value="Iron man 3">Iron Man 3</option>
+                  <option value="Thor: The Dark World">Thor: The Dark World</option>
+                  <option value="Captain America: The Winter Soldier">Captain America: The Winter Soldier</option>
+                  <option value="Guardians of the Galaxy" >Guardians of the Galaxy</option>
+                  <option value="Avengers: Age of Ultron">Avengers: Age of Ultron</option>
+                  <option value="Ant-Man" >Ant-Man</option>
+                  <option value="Captain America">Captain America</option>
+                  <option value="Doctor Strange">Doctor Strange</option>
+                  <option value="Guardians of the Galaxy Vol. 2" >Guardians of the Galaxy Vol. 2</option>
+                  <option value="spider-Man: Homecoming">Spider-Man: Homecoming</option>
+                  <option value="Thor: Ragnarok">Thor: Ragnarok</option>
+                  <option value="Black Panther" >Black Panther</option>
+                  <option value="Avengers: Infinity War">Avengers: Infinity War</option>
+                  <option value="Ant-Man and the Wasp" >Ant-Man and the Wasp</option>
+                  <option value="Captain Marvel">Captain Marvel</option>
+                  <option value="Avengers: End Game">Avengers: End Game</option>
+                  <option value="Spider-Man: Far From Home">Spider-Man: Far From Home</option>
+                </Form.Select>
                 <Button className = "btn btn-primary" type = "button" onClick = {handleSubmit}>
                     Enter
                 </Button>
-              </div>
-              <div className = "col-lg-12">
-                  <div className = "d-flex justify-content-center" style = {{textAlign: 'center', fontSize: '40px'}}>
-                    <label className = "labelInput">Fun Facts:</label>
-                    {facts ? (
-                    <div className="col-lg-6" style = {{textAlign: 'center', backgroundColor: '#995050', color: 'white'}}>
+            </div>
+            <div>
+              <div style = {{textAlign: 'center', fontSize: '30px'}}>
+                <label className = "labelInput">Fun Facts:</label>
+                  {facts ? (
+                    <div style = {{textAlign: 'center', backgroundColor: '#995050', color: 'white'}}>
                       <Facts facts={facts}/>
                     </div>
                   ):(
-                    <div className="col-lg-6" style = {{textAlign: 'center', backgroundColor: '#995050', color: 'white'}}>
-                      Once you submit the movie title, we'll fill this up with fun facts.<br/><br/><br/>
+                    <div style = {{textAlign: 'center', backgroundColor: '#995050', color: 'white'}}>
+                      Once you select movie title and click enter, we'll fill this up with fun facts.<br/><br/><br/>
                     </div>
                   )}
-                 </div>
               </div>
-         </div>
+            </div>
+           </div>
+          </div>
+        </div>
       </div>
     </React.Fragment>
   );
-  }
+}

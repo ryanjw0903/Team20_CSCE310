@@ -1,0 +1,9 @@
+.fact-container{   
+    margin: auto;
+    padding: 2%;
+    font-size: 18px;
+    text-align: center; 
+}
+.fact-list {
+    display: inline-block
+}
